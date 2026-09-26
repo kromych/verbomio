@@ -39,6 +39,15 @@
   });
   show(pick());
 
+  // Email addresses: the page's source holds each one's name and domain backwards and apart, with no @, which
+  // keeps them away from address harvesters; here they become ordinary mailto: links.
+  document.querySelectorAll("a.email").forEach(function (link) {
+    function forwards(text) { return text.split("").reverse().join(""); }
+    var address = forwards(link.dataset.u) + "@" + forwards(link.dataset.d);
+    link.href = "mailto:" + address;
+    link.textContent = address;
+  });
+
   // The support page's open issues, read from GitHub's API (a public repository needs no sign-in to read).
   var lists = document.querySelectorAll("ul.issues");
   if (!lists.length) return;

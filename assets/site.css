@@ -44,6 +44,9 @@ header.site nav > a[aria-current="page"] { opacity: 1; color: var(--sol); }
 
 .lang[hidden] { display: none; }
 
+/* An email address: its @ isn't in the page's source (see site.js). */
+.email .at::before { content: "@"; }
+
 .hero { text-align: center; padding: 36px 0 8px; }
 .hero .icon { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 12px 44px rgba(247, 102, 204, 0.35); }
 .hero h1 { font-size: clamp(40px, 9vw, 66px); line-height: 1.05; margin: 18px 0 6px; font-weight: 900; color: var(--sol);

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Privacy policy
+    url: https://verbomio.app/privacy/
+    about: What the app keeps on your device, and what it doesn't collect (nothing).

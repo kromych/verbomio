@@ -1,0 +1,11 @@
+name: Suggest an idea
+description: A verb, a tense, a game style or anything else you'd like to see.
+labels: ["idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: English, español, русский or українська are all fine.
+    validations:
+      required: true

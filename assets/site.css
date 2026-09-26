@@ -1,0 +1,92 @@
+/* verbomio.app: the app's night-to-dusk sky and its colors. The app is dark only, and so is the site. */
+:root {
+  --night: #0a0d24;
+  --dusk: #2b1252;
+  --sol: #ffc93d;
+  --rosa: #f766cc;
+  --azul: #4dc9f0;
+  --text: #f4f1ff;
+  --dim: rgba(244, 241, 255, 0.7);
+  --card: rgba(255, 255, 255, 0.07);
+  --stroke: rgba(255, 255, 255, 0.15);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--night); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--dusk) 0, var(--night) 560px) no-repeat, var(--night);
+  font: 17px/1.55 ui-rounded, "SF Pro Rounded", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--azul); }
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+
+header.site { display: flex; align-items: center; gap: 12px 18px; flex-wrap: wrap; padding: 18px 0 6px; }
+header.site .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none;
+                     font-weight: 800; font-size: 20px; }
+header.site .brand img { width: 36px; height: 36px; border-radius: 9px; }
+header.site nav { margin-left: auto; display: flex; gap: 8px 16px; align-items: center; flex-wrap: wrap; }
+header.site nav > a { color: var(--text); text-decoration: none; font-weight: 600; opacity: 0.85; }
+header.site nav > a[aria-current="page"] { opacity: 1; color: var(--sol); }
+
+.chips { display: flex; gap: 6px; }
+.chips a { padding: 2px 9px; border-radius: 999px; border: 1px solid var(--stroke); font-size: 13px; font-weight: 800;
+           color: var(--text); text-decoration: none; }
+.chips a[aria-current="true"] { background: var(--sol); border-color: var(--sol); color: #1b1030; }
+
+.lang[hidden] { display: none; }
+
+.hero { text-align: center; padding: 36px 0 8px; }
+.hero .icon { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 12px 44px rgba(247, 102, 204, 0.35); }
+.hero h1 { font-size: clamp(40px, 9vw, 66px); line-height: 1.05; margin: 18px 0 6px; font-weight: 900; color: var(--sol);
+           letter-spacing: -0.02em; }
+.hero .subtitle { font-size: 22px; font-weight: 700; margin: 0 0 10px; }
+.hero .promo { color: var(--dim); max-width: 640px; margin: 0 auto 20px; }
+.hero .platforms { color: var(--dim); font-size: 15px; margin: 14px 0 0; }
+
+.store { display: inline-block; padding: 11px 22px; border-radius: 12px; background: var(--text); color: #111;
+         font-weight: 800; text-decoration: none; }
+.store.soon { background: transparent; color: var(--text); border: 1px solid var(--stroke); }
+
+.shots { display: flex; gap: 14px; overflow-x: auto; padding: 20px 2px 16px; scroll-snap-type: x mandatory;
+         justify-content: safe center; }
+.shots img { flex: none; height: 460px; width: auto; border-radius: 24px; border: 1px solid var(--stroke);
+             scroll-snap-align: center; }
+.shots img.watch { height: 230px; align-self: center; border-radius: 44px; }
+.wide { margin: 8px 0 24px; }
+.wide img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--stroke); }
+
+article { background: var(--card); border: 1px solid var(--stroke); border-radius: 18px; padding: 8px 22px 18px;
+          margin: 18px 0; }
+article h2 { color: var(--sol); font-size: 26px; margin: 16px 0 4px; }
+article h3 { font-size: 18px; margin: 22px 0 2px; }
+article p { margin: 6px 0; }
+.updated { color: var(--dim); }
+
+.button { display: inline-block; padding: 10px 16px; border-radius: 12px; background: var(--sol); color: #1b1030;
+          font-weight: 800; text-decoration: none; margin: 6px 8px 6px 0; }
+.button.secondary { background: transparent; color: var(--text); border: 1px solid var(--stroke); }
+.note { color: var(--dim); font-size: 15px; }
+
+ul.issues { list-style: none; padding: 0; margin: 8px 0 0; }
+ul.issues li { padding: 10px 0; border-top: 1px solid var(--stroke); }
+ul.issues .label { display: inline-block; font-size: 12px; border-radius: 999px; padding: 0 8px; margin-left: 8px;
+                   border: 1px solid var(--stroke); color: var(--dim); }
+
+footer.site { color: var(--dim); font-size: 14px; padding: 28px 0 40px; }
+footer.site a { color: var(--dim); }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .shots { justify-content: flex-start; }
+  .shots img { height: 380px; }
+  .shots img.watch { height: 200px; }
+}

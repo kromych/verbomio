@@ -1,0 +1,43 @@
+name: Report a problem
+description: Something in ¡Verbo mío! doesn't work or looks wrong.
+labels: ["problem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for writing. English, español, русский or українська are all fine.
+        Issues here are public: please leave out anything personal.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, and what you saw. A screenshot helps (drag it in).
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - iPhone
+        - iPad
+        - Apple TV
+        - Mac
+        - Apple Watch
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: If you know it, as in "1.0 (6)".
+  - type: input
+    id: languages
+    attributes:
+      label: Languages
+      description: The language you're learning and the one you know.
+      placeholder: ES → EN

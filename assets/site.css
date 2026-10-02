@@ -296,11 +296,13 @@ footer.site a {
     border: 1px solid var(--stroke);
     padding: 11px 22px;
     border-radius: 12px;
+    line-height: 1.55;
 }
 
 a.store {
     display: inline-block;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    vertical-align: middle;
 }
 
 a.store:hover {
@@ -309,8 +311,9 @@ a.store:hover {
 }
 
 a.store img {
-    height: 44px;
+    height: 40px;
     width: auto;
     max-width: 100%;
     display: block;
+    aspect-ratio: attr(width) / attr(height); /* Ensures Chromium calculates intrinsic ratio correctly */
 }
